@@ -18,7 +18,13 @@ gem "jbuilder", "~> 2.5"
 gem "pg"
 
 group :development, :test do
-  gem "byebug", platform: :mri
+  gem "pry", platform: :mri
+  gem "rspec-rails"
+  gem "database_cleaner"
+  gem "factory_girl"
+  gem "capybara"
+  gem "faker"
+  gem "selenium-webdriver"
 end
 
 group :development do
