@@ -18,4 +18,4 @@ end
 require "support/factory_girl"
 require "database_cleaner"
 require "support/db_cleaner"
-
+require "support/examples"
