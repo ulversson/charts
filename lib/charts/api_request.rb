@@ -16,7 +16,7 @@ module Charts
     def request_data
       response = Faraday.get request_url
       @code = response.status
-      ActiveSupport::JSON.decode(response.body) if code == 200
+      code == 200 ? ActiveSupport::JSON.decode(response.body) : {}
     end  
   end
 end  

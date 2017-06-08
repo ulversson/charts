@@ -32,8 +32,8 @@ describe Charts::ApiRequest, type: :model do
         expect(api_request.code).to_not eq 200
       end  
       
-      it "response blank" do 
-        expect(api_request.response).to be_blank
+      it "response empty" do 
+        expect(api_request.response).to be_empty
       end  
       
     end  
