@@ -14,7 +14,7 @@ production:
   <<: *default
   database: charts_production
   username: charts
-  password: <%= ENV.fetch("PROD_DB_PASSWORD") %>
+  password:  <%= ENV['POSTGRES_PASSWORD'] %>
 staging:
   <<: *default
   database: charts_staging
