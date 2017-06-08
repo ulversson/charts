@@ -16,6 +16,8 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "pg"
+gem "faraday"
+gem "redis-objects"
 
 group :development, :test do
   gem "pry", platform: :mri
@@ -25,6 +27,7 @@ group :development, :test do
   gem "capybara"
   gem "faker"
   gem "selenium-webdriver"
+  gem "webmock"
 end
 
 group :development do

@@ -12,6 +12,7 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false 
   config.include Features
+  config.include Requests::Bitbay
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 end
@@ -19,3 +20,6 @@ require "support/factory_girl"
 require "database_cleaner"
 require "support/db_cleaner"
 require "support/examples"
+require "webmock/rspec"
+require "support/requests"
+WebMock.disable_net_connect!(allow_localhost: true)
