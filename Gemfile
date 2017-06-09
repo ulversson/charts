@@ -18,7 +18,7 @@ gem "jbuilder", "~> 2.5"
 gem "pg"
 gem "faraday"
 gem "redis-objects"
-
+gem "bootstrap-sass"
 group :development, :test do
   gem "pry", platform: :mri
   gem "rspec-rails"

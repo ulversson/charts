@@ -1,1 +1,11 @@
-<h1>Cryptocurrencies</h1>
+<div class="jumbotron">
+  <h1>Cryptocurrencies</h1>
+  <div id="chart-buttons"><%= chart_buttons %></div>
+  <div id="charts"></div>
+
+  <script type="text/javascript">
+    $(function(){
+      Charts.init();
+    })
+  </script>  
+</div>  
