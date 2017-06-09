@@ -30,7 +30,10 @@ var Charts = function() {
               enabled: false
             },              
             xAxis: {
-              type: 'datetime'
+              type: 'datetime',
+              dateTimeLabelFormats: {
+               day: '%d %b %Y'    //ex- 01 Jan 2016
+              }
             },
             scrollbar :{
               enabled: false
@@ -47,7 +50,7 @@ var Charts = function() {
                   valueDecimals: 2
               },
               threshold: null,
-                    data: data
+              data: data
             }]
           });
       }
