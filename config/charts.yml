@@ -1,0 +1,15 @@
+
+development:
+  bitcoin:
+    storage_key: "btc_usd"
+    request_url: "https://bitbay.net/API/Public/BTCUSD/ticker.json"
+  ethereum:
+    storage_key: "eth_usd"
+    request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json"  
+production:     
+  bitcoin:
+    storage_key: "btc_usd"
+    request_url: "https://bitbay.net/API/Public/BTCUSD/ticker.json"
+  ethereum:
+    storage_key: "eth_usd"
+    request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json"
