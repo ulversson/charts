@@ -26,33 +26,11 @@ var Charts = function() {
             rangeSelector : {
               selected: 3,
               inputEnabled:false,
-              allButtonsEnabled: true,
-              enabled: true,
-              buttons: [{
-              	type: 'minute',
-              	count: 15,
-              	text: '15m'
-              }, {
-              	type: 'minute',
-              	count: 30,
-              	text: '30m'
-              }, {
-              	type: 'hour',
-              	count: 1,
-              	text: '1h'
-              }, {
-              	type: 'hour',
-               count: 6,
-              	text: '6h'
-              }, {
-              	type: 'day',
-              	count: 1,
-              	text: '1d'
-              }]
+              allButtonsEnabled: false,
+              enabled: false
             },              
             xAxis: {
-              type: 'datetime',
-              min: getMonthBack()
+              type: 'datetime'
             },
             scrollbar :{
               enabled: false
@@ -64,7 +42,7 @@ var Charts = function() {
               text: ''
             },
             series: [{
-              name: chartName,
+              name: chartName.toUpperCase(),
               tooltip: {
                   valueDecimals: 2
               },

@@ -2,7 +2,7 @@ module Charts
   module Types
     class NonRedisChart < Charts::Types::Chart
     
-      attr_reader :response_processor
+      attr_accessor :response_processor
     
       def initialize(name, request_url)
         @name = name
@@ -10,7 +10,7 @@ module Charts
       end  
     
       def chart_data
-        response_processor.process(api_request.call.response)
+        response_processor.process(api_request.call)
       end
     
     end

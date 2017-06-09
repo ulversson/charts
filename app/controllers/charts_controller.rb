@@ -16,7 +16,7 @@ class ChartsController < ApplicationController
                     params[:chart_name].to_s.capitalize, 
                     chart_config[:request_url]
                     )
-      @chart.response_processor = response_processor_klass(chart_config[:response_processor])              
+      @chart.response_processor = response_processor_klass(chart_config[:response_processor]).new              
     end    
     render json: @chart.chart_data              
   end  
@@ -24,7 +24,7 @@ class ChartsController < ApplicationController
   private
   
   def response_processor_klass(klass_name)
-    "Charts::ResponseProcessors::#{klass_name}".constsantize  
+    "Charts::ResponseProcessors::#{klass_name}".constantize  
   end    
   
 end
