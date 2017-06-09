@@ -18,6 +18,10 @@ module Charts
       storage_collection.members(with_scores: true).map {|row| [row.first.to_i, row[1]]}.sort_by {|row| Time.at(row.first.to_i/1000)}
     end  
     
+    def clear
+      storage_collection.clear
+    end  
+    
     private
     
     def storage_collection

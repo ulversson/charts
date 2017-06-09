@@ -6,6 +6,7 @@ RSpec.configure do |config|
 
   config.before(:each) do |example|
     DatabaseCleaner.start
+    Charts::Cleaner.clear_all
   end
 
   config.after(:each) do
