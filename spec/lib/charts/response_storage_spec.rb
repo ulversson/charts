@@ -15,6 +15,12 @@ describe Charts::ResponseStorage do
         expect(bitcoin_storage.values).to be_an_instance_of Array
         expect { bitcoin_storage.store_request }.to change { bitcoin_storage.values.size }.by 1
       end  
+      
+      it "clears values successfully" do 
+        expect(bitcoin_storage.values).to_not be_empty
+        bitcoin_storage.clear
+        expect(bitcoin_storage.values).to be_empty
+      end  
     end  
     
     context "chart api request failed" do 
