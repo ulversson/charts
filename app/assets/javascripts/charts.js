@@ -9,13 +9,6 @@ var Charts = function() {
     });
   }
   
-  var getMonthBack = function() {
-    var d = new Date();
-    d.setMonth(d.getMonth() - 1);
-    d.setHours(0,0,0);
-    return d;
-  }
-  
   var initializeChart = function(chartName) {
     $.ajax({
       dataType: "json",
