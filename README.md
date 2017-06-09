@@ -11,4 +11,4 @@
 ### Chart configuration is stored in 
 ` config/charts.yml ` 
 
-I used ticker api for bitcoin/ethereum charts. For simplicity of this task I haven't used live chart. 
+I used ticker api for bitcoin/ethereum charts. For simplicity of this task I haven't used live chart. Nasdaq Chart shows last 100 days. 
