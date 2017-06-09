@@ -24,7 +24,7 @@ class ChartsController < ApplicationController
   private
   
   def response_processor_klass(klass_name)
-    "Charts::ResponseProcessors::#{klass_name}".constantize  
+    Charts::ResponseProcessors.klass_name_from_processor(klass_name)
   end    
   
 end

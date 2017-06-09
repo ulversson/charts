@@ -1,5 +1,14 @@
 module Charts
   module ResponseProcessors
+    
+    class << self
+    
+      def klass_name_from_processor(processor_klass)
+        "Charts::ResponseProcessors::#{processor_klass}".constantize  
+      end   
+    
+    end  
+    
     class NasdaqResponseProcessor
 
       def process(response)
