@@ -8,7 +8,11 @@ module Charts
     end  
     
     def call
-      @response = request_data
+      @response ||= request_data
+    end  
+    
+    def response_ok?
+      code == 200
     end  
       
     private
@@ -16,7 +20,7 @@ module Charts
     def request_data
       response = Faraday.get request_url
       @code = response.status
-      code == 200 ? ActiveSupport::JSON.decode(response.body) : {}
+      response_ok? ? ActiveSupport::JSON.decode(response.body) : {}
     end  
   end
 end  

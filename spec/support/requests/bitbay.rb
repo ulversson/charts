@@ -2,7 +2,7 @@ module Requests
   module Bitbay
     
     def stub_bitbay_successfull_response
-      stub_request(:get, "https://bitbay.net/API/Public/BTCUSD/ticker.json").
+      stub_request(:get, bitbay_request_url).
           to_return(body: bitbay_successfull_response_body)
     end
     
@@ -10,6 +10,10 @@ module Requests
       stub_request(:any, /bitbay\.net/).
         to_return(status: [500, "Internal Server Error"])
     end  
+    
+    def bitbay_request_url
+       "https://bitbay.net/API/Public/BTCUSD/ticker.json"
+    end   
     
     private 
     

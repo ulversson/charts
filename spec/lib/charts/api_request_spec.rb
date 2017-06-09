@@ -3,8 +3,7 @@ require 'charts'
 
 describe Charts::ApiRequest, type: :model do 
   context "an instance" do   
-    let(:request_url) { "https://bitbay.net/API/Public/BTCUSD/ticker.json" }
-    let(:api_request) { Charts::ApiRequest.new(request_url) }
+    let(:api_request) { Charts::ApiRequest.new(bitbay_request_url) }
     
     context "successul response" do 
       before  do 
@@ -14,6 +13,10 @@ describe Charts::ApiRequest, type: :model do
       
       it "status ok" do 
         expect(api_request.code).to eq 200
+      end  
+      
+      it "#response_ok? is true" do 
+        expect(api_request.response_ok?).to be_truthy
       end  
       
       it "response not empty" do 
@@ -26,7 +29,11 @@ describe Charts::ApiRequest, type: :model do
       before do 
         stub_bitbay_error_response
         api_request.call
-      end  
+      end 
+      
+      it "#response_ok? is false" do 
+        expect(api_request.response_ok?).to be_falsey
+      end   
       
       it "status not ok" do 
         expect(api_request.code).to_not eq 200
