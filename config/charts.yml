@@ -5,13 +5,19 @@ development:
   ethereum:
     storage_key: "eth_usd"
     request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json"  
+  nasdaq:
+    response_processor: "NasdaqResponseProcessor"
+    request_url: "https://www.quandl.com/api/v3/datasets/NASDAQOMX/COMP.json?api_key=2GP6dWmCuicpm3d5sTiX&rows=1"  
 test:
   bitcoin:
     storage_key: "btc_usd"
     request_url: "https://bitbay.net/API/Public/BTCUSD/ticker.json"
   ethereum:
     storage_key: "eth_usd"
-    request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json"      
+    request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json" 
+  nasdaq:
+    response_processor: "NasdaqResponseProcessor"
+    request_url: "https://www.quandl.com/api/v3/datasets/NASDAQOMX/COMP.json?api_key=2GP6dWmCuicpm3d5sTiX&rows=1"       
 production:     
   bitcoin:
     storage_key: "btc_usd"
@@ -19,3 +25,6 @@ production:
   ethereum:
     storage_key: "eth_usd"
     request_url: "https://bitbay.net/API/Public/ETHUSD/ticker.json"
+  nasdaq:
+    response_processor: "NasdaqResponseProcessor"
+    request_url: "https://www.quandl.com/api/v3/datasets/NASDAQOMX/COMP.json?api_key=2GP6dWmCuicpm3d5sTiX&rows=1"  

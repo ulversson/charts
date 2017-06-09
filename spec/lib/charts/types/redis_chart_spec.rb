@@ -1,11 +1,11 @@
 require "rails_helper"
 require "charts"
 
-describe Charts::Chart do 
+describe Charts::Types::RedisChart do 
   context "an instance" do   
     let(:name) { "Bitcoin" }
     let(:storage_key) { "btcusd" }
-    let(:chart) { Charts::Chart.new(name, bitbay_request_url, storage_key) }
+    let(:chart) { Charts::Types::RedisChart.new(name, bitbay_request_url, storage_key) }
    
    
     it "has name" do 

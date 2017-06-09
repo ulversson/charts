@@ -5,12 +5,26 @@ class ChartsController < ApplicationController
   
   def show
     chart_config = Charts::Config.config[params[:name]]
-    @chart = Charts::Chart.new(
-                  params[:chart_name].to_s.capitalize, 
-                  chart_config[:request_url], 
-                  chart_config[:storage_key]
-                  )
+    if chart_config[:storage_key]
+      @chart = Charts::Types::RedisChart.new(
+                    params[:chart_name].to_s.capitalize, 
+                    chart_config[:request_url], 
+                    chart_config[:storage_key]
+                    )
+    else
+      @chart = Charts::Types::NonRedisChart.new(
+                    params[:chart_name].to_s.capitalize, 
+                    chart_config[:request_url]
+                    )
+      @chart.response_processor = response_processor_klass(chart_config[:response_processor])              
+    end    
     render json: @chart.chart_data              
   end  
+  
+  private
+  
+  def response_processor_klass(klass_name)
+    "Charts::ResponseProcessors::#{klass_name}".constsantize  
+  end    
   
 end

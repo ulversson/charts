@@ -5,7 +5,7 @@ var Charts = function() {
       e.preventDefault();
       var chartName = $(this).data("chart");
       
-      initializeCharts(chartName);
+      initializeChart(chartName);
     });
   }
   
@@ -16,16 +16,12 @@ var Charts = function() {
     return d;
   }
   
-  var initializeCharts = function(chartName) {
+  var initializeChart = function(chartName) {
     $.ajax({
       dataType: "json",
       url: '/charts/'+chartName,
       global: false,
       success:  function(data) {
-        var groupingUnits = [
-                 ['week', [1]],
-                 ['month', [1, 2, 3, 4, 6]]
-             ];
           Highcharts.stockChart('charts', {
             rangeSelector : {
               selected: 3,
@@ -83,7 +79,7 @@ var Charts = function() {
   return {
     
     init: function() {
-      initializeCharts("bitcoin");
+      initializeChart("bitcoin");
       bindChartButtonClick();
     }
     
